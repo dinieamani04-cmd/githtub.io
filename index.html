@@ -1,0 +1,426 @@
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harumanis Growth Rate Analysis - SFP: Agro Product Technology</title>
+    <!-- Tailwind CSS for modern premium dashboard styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js for beautiful interactive visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- MathJax for rendering gorgeous LaTeX mathematical equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen text-slate-800 antialiased">
+
+    <!-- Top Navigation Header -->
+    <header class="bg-emerald-900 text-white border-b border-emerald-800 shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-emerald-500 text-emerald-950 p-2.5 rounded-xl font-bold text-xl shadow-inner">
+                    🥭 SFP
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-tight">Agro Product Technology</h1>
+                    <p class="text-xs text-emerald-300">Mathematical Bioscience & Post-Harvest Modeling Portal</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 text-xs bg-emerald-950/60 px-3 py-1.5 rounded-full border border-emerald-700 text-emerald-200">
+                <span class="inline-block w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></span>
+                Malaysian Agricultural Standard (MARDI Model)
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Welcome Hero Alert -->
+        <div class="bg-gradient-to-r from-emerald-800 to-teal-900 text-white rounded-2xl p-6 sm:p-8 mb-8 shadow-xl relative overflow-hidden">
+            <div class="absolute right-0 top-0 translate-x-12 -translate-y-8 text-emerald-700 opacity-20 pointer-events-none text-[12rem] font-bold">
+                f'(x)
+            </div>
+            <div class="relative z-10 max-w-3xl">
+                <span class="bg-emerald-500/30 text-emerald-300 text-xs font-semibold tracking-wider uppercase px-2.5 py-1 rounded-md border border-emerald-500/20">
+                    Application of Derivatives
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight">
+                    Optimizing Harumanis Mango Harvesting using $f'(x)$
+                </h2>
+                <p class="mt-2 text-emerald-100 text-sm sm:text-base leading-relaxed">
+                    Welcome, Agro Product Technology student! This interactive tool models the sigmoidal wet-weight growth curve of Perlis’s premium <span class="text-emerald-300 font-semibold">Harumanis Mango</span> over a 12-week development window post-anthesis. By using derivatives, we track the instantaneous growth rate to precisely understand the physiological milestones and design post-harvest handling regimes.
+                </p>
+            </div>
+        </div>
+
+        <!-- Main Workspace Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Left Column: Math, Bioscience Scenario, References (7 cols) -->
+            <div class="lg:col-span-5 space-y-8">
+                
+                <!-- Bioscience Context & Problem Statement Card -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                    <h3 class="text-base font-bold text-slate-900 flex items-center gap-2 mb-3">
+                        <span class="p-1.5 bg-emerald-50 text-emerald-700 rounded-lg">🔬</span>
+                        The Bioscience Scenario
+                    </h3>
+                    <div class="text-slate-600 text-sm leading-relaxed space-y-3">
+                        <p>
+                            In agro-product manufacturing and distribution, understanding the growth kinematics of high-value crops like the <strong>Harumanis Mango (<em>Mangifera indica</em> 'Harumanis')</strong> is crucial. Standard sizing and optimal pulp-to-stone ratios dictate post-harvest classification and pricing.
+                        </p>
+                        <p>
+                            The fruit's mass follows a classic <strong>logistic (sigmoidal) growth curve</strong>. In the first few weeks, cell division is slow (lag phase). This is followed by rapid cell expansion (exponential phase), before leveling off as the fruit reaches physiological maturity (plateau phase) and shifts its metabolism to starch-to-sugar conversion.
+                        </p>
+                        <p>
+                            <strong>The Problem:</strong> When is the fruit growing fastest? When does this rapid expansion stop, shifting the plant's resources to sugar accumulation? We solve this by finding the <strong>first derivative $f'(x)$</strong> of the mass function, which measures the instantaneous growth rate (grams/week).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mathematical Formulas Card -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <h3 class="text-base font-bold text-slate-900 flex items-center gap-2 mb-4">
+                        <span class="p-1.5 bg-emerald-50 text-emerald-700 rounded-lg">🧮</span>
+                        Mathematical Modeling
+                    </h3>
+                    <div class="space-y-4">
+                        <!-- Logistic Function f(x) -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/60">
+                            <span class="text-xs text-slate-500 font-medium uppercase block mb-1">Fruit Weight Function $f(x)$</span>
+                            <div class="text-sm font-semibold text-slate-800 overflow-x-auto py-1">
+                                $$f(x) = \frac{450}{1 + e^{-0.8(x - 6)}}$$
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Where $x$ is the development time in **weeks post-anthesis**, and $f(x)$ is the cumulative fruit weight in **grams (g)**. $450$g represents the limiting maximum weight ($L$).
+                            </p>
+                        </div>
+
+                        <!-- Derivative f'(x) -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/60">
+                            <span class="text-xs text-slate-500 font-medium uppercase block mb-1">Instantaneous Growth Rate Function $f'(x)$</span>
+                            <div class="text-sm font-semibold text-slate-800 overflow-x-auto py-1">
+                                $$f'(x) = \frac{360 \cdot e^{-0.8(x - 6)}}{\left(1 + e^{-0.8(x - 6)}\right)^2}$$
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Derived using the Quotient Rule and Chain Rule. This outputs the instantaneous growth rate in **grams per week (g/week)** at any given week $x$.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Realistic Malaysian Data Reference Card -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2.5">Scientific References & SOP</h4>
+                    <div class="text-xs text-slate-500 space-y-2">
+                        <p class="flex items-start gap-2">
+                            <span class="text-emerald-600 font-bold">✓</span>
+                            <span><strong>Department of Agriculture Perlis (Jabatan Pertanian Perlis):</strong> "Manual Teknologi Penanaman Mangga Harumanis" guidelines for grade maturation indices.</span>
+                        </p>
+                        <p class="flex items-start gap-2">
+                            <span class="text-emerald-600 font-bold">✓</span>
+                            <span><strong>MARDI (Malaysian Agricultural Research and Development Institute):</strong> "Physiological and biochemical changes during growth and development of Harumanis mango" (Journal of Tropical Agriculture and Food Science).</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Interactive Graph & Derivative Readout (7 cols) -->
+            <div class="lg:col-span-7 space-y-8">
+                
+                <!-- Interactive Chart Block -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-6">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900">Harumanis Development Curve</h3>
+                            <p class="text-xs text-slate-500">Click anywhere on the plot line to run instant calculus profiling.</p>
+                        </div>
+                        <div class="flex items-center gap-4 text-xs font-medium">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                                <span class="text-slate-600">Weight (g)</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3 h-3 rounded-full bg-teal-500 inline-block"></span>
+                                <span class="text-slate-600">Rate (g/wk)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Canvas Container for ChartJS -->
+                    <div class="relative w-full h-[320px] sm:h-[400px]">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Dynamic Derivative Output Display Card (Crucial for interaction) -->
+                <div id="analyticalPanel" class="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 transition-all duration-300">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4 pb-4 border-b border-emerald-200/60">
+                        <div>
+                            <span id="targetWeekBadge" class="bg-emerald-200 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                Week 6.0 (Mid-Development)
+                            </span>
+                            <h4 class="text-lg font-extrabold text-slate-900 mt-1.5">Instantaneous State Analysis</h4>
+                        </div>
+                        <!-- Action prompt indicator -->
+                        <span class="text-xs text-emerald-700 bg-emerald-100 px-3 py-1 rounded-md animate-bounce">
+                            💡 Try clicking different weeks on the line!
+                        </span>
+                    </div>
+
+                    <!-- Key Metrics Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white p-4 rounded-xl border border-emerald-100 shadow-sm">
+                            <span class="text-xs text-slate-400 font-semibold block uppercase">Fruit Weight $f(x)$</span>
+                            <div class="flex items-baseline gap-1 mt-1">
+                                <span id="weightVal" class="text-2xl font-bold text-emerald-700">225.0</span>
+                                <span class="text-slate-500 text-xs font-semibold">grams</span>
+                            </div>
+                            <p class="text-[11px] text-slate-400 mt-1">Estimated cumulative weight of the Harumanis fruit.</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-xl border border-emerald-100 shadow-sm">
+                            <span class="text-xs text-slate-400 font-semibold block uppercase">Growth Rate $f'(x)$ [Derivative]</span>
+                            <div class="flex items-baseline gap-1 mt-1">
+                                <span id="rateVal" class="text-2xl font-bold text-teal-600">90.0</span>
+                                <span class="text-slate-500 text-xs font-semibold">grams / week</span>
+                            </div>
+                            <p class="text-[11px] text-slate-400 mt-1">Instantaneous weight addition rate at this week.</p>
+                        </div>
+                    </div>
+
+                    <!-- Layman explanation generated dynamically -->
+                    <div class="bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-emerald-100 text-sm leading-relaxed text-slate-700">
+                        <h5 class="font-bold text-slate-900 text-xs uppercase mb-1.5 tracking-wider text-emerald-800">Post-Harvest / SFP Expert Explanation:</h5>
+                        <p id="laymanText">
+                            At week 6, the Harumanis mango is at its absolute peak growth rate! It is accumulating weight at 90.0 grams per week. This represents the inflection point on the growth curve. Cells are expanding rapidly; the plant is pouring water and nutrients into the pulp. Standard agro-technology treatments (like fertilizer boosters and pests bagging/protection) must already be fully complete before this phase.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer with Author details -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 mt-12 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>© 2026 Agro Product Technology Calculus Workshop. Built for Undergraduate Bioscience Studies in Malaysia.</p>
+            <p class="text-slate-500">Powered by Chart.js, Tailwind, & MathJax</p>
+        </div>
+    </footer>
+
+    <!-- Chart Implementation and Interactive Logic Scripts -->
+    <script>
+        // Mathematical Functions
+        // f(x) = 450 / (1 + e^(-0.8 * (x - 6)))
+        function getWeight(x) {
+            return 450 / (1 + Math.exp(-0.8 * (x - 6)));
+        }
+
+        // f'(x) = (360 * e^(-0.8 * (x - 6))) / (1 + e^(-0.8 * (x - 6)))^2
+        function getGrowthRate(x) {
+            const expTerm = Math.exp(-0.8 * (x - 6));
+            return (360 * expTerm) / Math.pow(1 + expTerm, 2);
+        }
+
+        // Generate data points for weeks 0 to 12
+        const labels = [];
+        const weightData = [];
+        const rateData = [];
+
+        // Generating high-resolution data points (every 0.5 weeks) to make curves smooth
+        for (let x = 0; x <= 12; x += 0.5) {
+            labels.push(x);
+            weightData.push(getWeight(x));
+            rateData.push(getGrowthRate(x));
+        }
+
+        // Context-aware layman/bioscience explanations for different growth phases
+        function getExpertExplanation(x, weight, rate) {
+            const w = weight.toFixed(1);
+            const r = rate.toFixed(1);
+            
+            if (x < 3) {
+                return `**Lag Phase (Initial Set-up):** The mango is in its early post-anthesis phase (fertilization completed). Cell division is the primary activity, so weight accumulation is slow ($f(x)$ = ${w}g) and the growth rate is only ${r} g/week. At this stage, post-harvest quality is determined by calcium sprays to strengthen cell walls, preventing issues like "soft-nose" physiological disorders in the mature product.`;
+            } else if (x >= 3 && x < 5) {
+                return `**Accelerating Cell Expansion:** Growth is picking up pace ($f'(x)$ = ${r} g/week). Cell elongation is actively taking place inside the pulp. The crop's demand for water increases significantly during this phase. Proper irrigation and potassium fertilizer applications are critical now to support the swelling cell structures.`;
+            } else if (x >= 5 && x <= 7) {
+                return `**Inflection Point & Peak Growth Stage:** At week ${x}, the fruit is gaining mass at its absolute limit of ${r} grams/week! The fruit is highly sensitive to weather changes and mechanical bruising. Structurally, the flesh is firm, light green, and is currently accumulating mass faster than any other time in its lifecycle. Maximum nutrition partition happens here.`;
+            } else if (x > 7 && x <= 10) {
+                return `**Decelerating Growth (Ripening Preparation):** The growth rate is dropping ($f'(x)$ = ${r} g/week), and the weight curve is flattening ($f(x)$ = ${w}g). The cell structures are reaching maximum physical volume. Internally, a massive metabolic shift is starting: starch synthesis begins to give way to sugar hydrolysis, and the mango starts producing aromatic volatile organic compounds.`;
+            } else {
+                return `**Plateau / Optimal Harvest Window:** The instantaneous growth rate is almost zero ($f'(x)$ = ${r} g/week), meaning physical volume expansion has stopped. The fruit has reached mature mass (${w}g). In Malaysia, Harumanis mangoes are harvested in this 11-12 week window. This is the ultimate stage for Agro Product Tech: starch hydrolyzes into sucrose, fructose, and glucose, organic acids decrease, and the iconic yellow-flesh premium sweet aroma develops. Ready for post-harvest grading, packaging, and cold-chain logistics!`;
+            }
+        }
+
+        // Initialize Chart.js
+        let chartInstance;
+        const ctx = document.getElementById('growthChart').getContext('2d');
+
+        chartInstance = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Cumulative Fruit Weight (g)',
+                        data: weightData,
+                        borderColor: '#10b981', // Emerald-500
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        borderWidth: 3,
+                        yAxisID: 'y',
+                        tension: 0.3,
+                        pointBackgroundColor: '#10b981',
+                        pointHoverRadius: 8,
+                        pointHoverBackgroundColor: '#047857'
+                    },
+                    {
+                        label: 'Instantaneous Growth Rate (g/week)',
+                        data: rateData,
+                        borderColor: '#14b8a6', // Teal-500
+                        borderDash: [5, 5],
+                        borderWidth: 2,
+                        yAxisID: 'y1',
+                        tension: 0.3,
+                        pointBackgroundColor: '#14b8a6',
+                        pointHoverRadius: 8,
+                        pointHoverBackgroundColor: '#0f766e'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                plugins: {
+                    legend: {
+                        display: false // We use our own custom legend indicators
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                        titleFont: { size: 13, weight: 'bold', family: 'Plus Jakarta Sans' },
+                        bodyFont: { size: 12, family: 'Plus Jakarta Sans' },
+                        padding: 12,
+                        cornerRadius: 10,
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += context.parsed.y.toFixed(1);
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Weeks Post-Anthesis (Development stage)',
+                            font: { size: 12, weight: '600', family: 'Plus Jakarta Sans' },
+                            color: '#475569'
+                        },
+                        grid: {
+                            color: 'rgba(241, 245, 249, 1)'
+                        }
+                    },
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Fruit Wet Weight (grams)',
+                            font: { size: 12, weight: '600', family: 'Plus Jakarta Sans' },
+                            color: '#10b981'
+                        },
+                        min: 0,
+                        max: 500,
+                        grid: {
+                            color: 'rgba(241, 245, 249, 1)'
+                        }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: {
+                            display: true,
+                            text: 'Growth Rate (grams/week)',
+                            font: { size: 12, weight: '600', family: 'Plus Jakarta Sans' },
+                            color: '#14b8a6'
+                        },
+                        min: 0,
+                        max: 100,
+                        grid: {
+                            drawOnChartArea: false // only want the grid lines for the main Y axis
+                        }
+                    }
+                },
+                onClick: (e, activeEls) => {
+                    if (activeEls.length > 0) {
+                        const index = activeEls[0].index;
+                        const week = labels[index];
+                        updateAnalysis(week);
+                    }
+                }
+            }
+        });
+
+        // Function to update visual readout panels
+        function updateAnalysis(week) {
+            const weight = getWeight(week);
+            const rate = getGrowthRate(week);
+            const panel = document.getElementById('analyticalPanel');
+
+            // Visual flash/feedback effect
+            panel.classList.remove('bg-emerald-50', 'border-emerald-200');
+            panel.classList.add('bg-teal-50', 'border-teal-300', 'scale-[1.01]');
+            
+            setTimeout(() => {
+                panel.classList.remove('bg-teal-50', 'border-teal-300', 'scale-[1.01]');
+                panel.classList.add('bg-emerald-50', 'border-emerald-200');
+            }, 300);
+
+            // Update DOM fields
+            document.getElementById('targetWeekBadge').innerText = `Week ${week.toFixed(1)} (${getPhaseLabel(week)})`;
+            document.getElementById('weightVal').innerText = weight.toFixed(1);
+            document.getElementById('rateVal').innerText = rate.toFixed(1);
+
+            // Fetch and parse formatted bioscience layman description
+            const markdownText = getExpertExplanation(week, weight, rate);
+            document.getElementById('laymanText').innerHTML = parseBoldToHTML(markdownText);
+        }
+
+        // Helper helper to format inline pseudo-markdown bold tags
+        function parseBoldToHTML(text) {
+            return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        }
+
+        // Get simple phase helper label
+        function getPhaseLabel(week) {
+            if (week < 3) return "Lag Phase";
+            if (week >= 3 && week < 5) return "Early Growth";
+            if (week >= 5 && week <= 7) return "Peak Expansion";
+            if (week > 7 && week <= 10) return "Starch Accumulation";
+            return "Harvest Window";
+        }
+
+        // Initialize display to show Week 6 state on page load
+        window.onload = function() {
+            updateAnalysis(6.0);
+        };
